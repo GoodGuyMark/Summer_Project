@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="col-sm-8 mx-auto">
+            <h1 class="text-center">PROFILE</h1>
+        </div>
+        <table class="table col-md-6 mx-auto">
+            <tr>
+                <td>Username</td>
+                <td>{{ details?.username }}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{ details?.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{ details?.last_name }}</td>
+            </tr>
+        </table>
+
+        <div class="text-center">
+            <a class="btn btn-dark" routerLink="/updateProfile"
+                >Change profile details</a
+            >
+        </div>
+    </div>
+</div>

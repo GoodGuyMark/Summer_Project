@@ -1,0 +1,77 @@
+<nav
+    class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between"
+>
+    <a class="navbar-brand" routerLink="" (click)="returnHome()"
+        ><i class="fa fa-music"></i>&nbsp;Mark's Musicians</a
+    >
+    <ul class="navbar-nav">
+        <li *ngIf="auth.isLoggedIn() && auth.isAdmin()" class="nav-item">
+            <a class="nav-link" routerLink="/admin" (click)="admin()"
+                >Admin&nbsp;<i class="fa fa-unlock"></i
+            ></a>
+        </li>
+        <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/register" (click)="register()"
+                >Register&nbsp;<i class="fa fa-book"></i
+            ></a>
+        </li>
+        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/profile" (click)="profile()">
+                Hello {{ auth.getUserDetails()?.first_name }}&nbsp;<i
+                    class="fa fa-id-badge"
+                ></i
+            ></a>
+        </li>
+        <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/login" (click)="login()"
+                >Login&nbsp;<i class="fa fa-user-circle"></i
+            ></a>
+        </li>
+        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="" (click)="auth.logout()"
+                >Logout&nbsp;<i class="fa fa-user-circle-o"></i
+            ></a>
+        </li>
+    </ul>
+</nav>
+
+<div>
+    <img src="../assets/piano.jpg" width="100%" height="275px" />
+</div>
+
+<ul id="tabs" class="nav nav-tabs nav-fill nav-dark bg-dark">
+    <li class="nav-item">
+        <a id="home" class="nav-link active" routerLink="" (click)="home()"
+            >Home&nbsp;<i class="fa fa-home"></i
+        ></a>
+    </li>
+    <li class="nav-item">
+        <a
+            id="shop"
+            class="nav-link text-light"
+            routerLink="/shop"
+            (click)="shop()"
+            >Shop&nbsp;<i class="fa fa-tag"></i
+        ></a>
+    </li>
+    <li class="nav-item">
+        <a
+            id="learn"
+            class="nav-link text-light"
+            routerLink="/learn"
+            (click)="learn()"
+            >Learn To Play&nbsp;<i class="fa fa-book"></i
+        ></a>
+    </li>
+    <li class="nav-item">
+        <a
+            id="contact"
+            class="nav-link text-light"
+            routerLink="/contact"
+            (click)="contact()"
+            >Contact Us&nbsp;<i class="fa fa-phone"></i
+        ></a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

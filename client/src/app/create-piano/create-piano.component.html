@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-2 mx-auto">
+                <form
+                    class="needs-validation"
+                    (submit)="createPiano(piano)"
+                    novalidate
+                >
+                    <h1 class="h3 mb-3 font-weight-normal">Create Piano</h1>
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter a brand"
+                            [(ngModel)]="piano.brand"
+                            name="brand"
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a brand.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter a model"
+                            [(ngModel)]="piano.model"
+                            name="model"
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a Model.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select
+                            class="form-control"
+                            [(ngModel)]="piano.type"
+                            name="type"
+                        >
+                            <option selected>Select a type</option>
+                            <option>Grand</option>
+                            <option>Upright</option>
+                            <option>Digital</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="desciprption">Description</label>
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            [(ngModel)]="piano.description"
+                            name="description"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter the price"
+                            [(ngModel)]="piano.price"
+                            name="price"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input
+                            type="file"
+                            class="form-control-file"
+                            [(ngModel)]="piano.image"
+                            name="image"
+                        />
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-lg btn-dark">
+                        Create Piano
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-lg btn-dark float-right"
+                        routerLink="/managePianos"
+                    >
+                        Cancel
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

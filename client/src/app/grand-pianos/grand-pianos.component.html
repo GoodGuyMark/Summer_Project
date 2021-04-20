@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div *ngFor="let piano of pianos">
+            <div class="card mb-5">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img
+                            src="../../assets/pianos/{{ piano.image }}"
+                            style="height: 300px; width: 300px;"
+                            class="card-img"
+                            alt="Can't load image :("
+                        />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                {{ piano.brand }} - {{ piano.model }}
+                            </h3>
+                            <h5 class="card-title">{{ piano.price }}</h5>
+                            <div class="card-text">
+                                {{ piano.description }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card-body">
+                            <a
+                                class="btn btn-dark text-light float-right"
+                                style="cursor: pointer;"
+                                routerLink="/buyPiano"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

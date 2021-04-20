@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-2 mx-auto">
+                <form>
+                    <h1 class="h3 mb-3 font-weight-normal">
+                        Update Piano details
+                    </h1>
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter a brand"
+                            [(ngModel)]="details.brand"
+                            name="brand"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter a model"
+                            [(ngModel)]="details.model"
+                            name="model"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select
+                            class="form-control"
+                            [(ngModel)]="details.type"
+                            name="type"
+                        >
+                            <option selected>Select a type</option>
+                            <option>Grand</option>
+                            <option>Upright</option>
+                            <option>Digital</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="desciprption">Description</label>
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            [(ngModel)]="details.description"
+                            name="description"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter the price"
+                            [(ngModel)]="details.price"
+                            name="price"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input
+                            type="file"
+                            class="form-control-file"
+                            [(ngModel)]="details.image"
+                            name="image"
+                        />
+                    </div>
+                    <br />
+                    <button
+                        type="submit"
+                        class="btn btn-lg btn-dark"
+                        (click)="updatePiano()"
+                    >
+                        Update Piano
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-lg btn-dark float-right"
+                        routerLink="/managePianos"
+                    >
+                        Cancel
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

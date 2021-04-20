@@ -1,0 +1,11 @@
+{
+    "/users": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+
+    "/pianos": {
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}

@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="row">
+            <h1 class="col-sm-10">All Pianos</h1>
+            <a
+                class="btn btn-dark text-light col-sm-2 pt-3"
+                routerLink="/createPiano"
+                >Create Piano</a
+            >
+        </div>
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let detail of details">
+                <td>{{ detail.id }}</td>
+                <td>{{ detail.brand }}</td>
+                <td>{{ detail.model }}</td>
+                <td>{{ detail.type }}</td>
+                <td>{{ detail.price }}</td>
+                <!--<td>
+                    <a
+                        class="fa fa-edit"
+                        style="color: black; cursor: pointer; text-decoration: none;"
+                        routerLink="/updatePiano"
+                    ></a>
+                </td>-->
+                <td>
+                    <a
+                        class="fa fa-trash"
+                        style="color: red; cursor: pointer"
+                        (click)="deletePiano(detail.id)"
+                    ></a>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

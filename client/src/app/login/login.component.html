@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-2 mx-auto">
+                <form (submit)="login()">
+                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="username"
+                            placeholder="Enter Username"
+                            [(ngModel)]="credentials.username"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            placeholder="Password"
+                            [(ngModel)]="credentials.password"
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-dark">
+                        Sign in
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-lg btn-dark float-right"
+                        routerLink=""
+                    >
+                        Cancel
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
